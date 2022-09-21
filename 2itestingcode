@@ -1,0 +1,69 @@
+   """
+
+    Method for removing duplicates from list of random numbers
+
+    :param numbers:
+
+    :return: sorted list of numbers in descending number
+
+    """
+
+    if len(numbers) > 10 or len(numbers) < 10:
+
+        logging.info('List can only exactly 10 numbers.')
+
+        exit(-1)
+
+    # Ensure that the list only consist of numbers
+
+    try:
+
+        number_list = [int(x) for x in numbers]
+
+    except ValueError as ve:
+
+        logging.error("numbers should contain values that can be converted into integers.")
+
+        exit(-1)
+
+
+
+    # ensure that the numbers is between 1 and 100
+
+    validate_range = [int(x) for x in numbers if x >=1 and x <= 100]
+
+    if len(validate_range) != 10:
+
+        logging.error("The values in the list lies outside the acceptable data boundaries of 1 to 100")
+
+        exit(-1)
+
+
+
+    # If all validations have been successful, now remove duplicates from the list of the 10 numbers.
+
+    dedup_list = set(numbers)
+
+
+
+    # Sorted list
+
+    sorted_dedup_list = sorted(list(dedup_list), reverse=True)
+
+    return sorted_dedup_list
+
+
+
+
+
+if __name__ == "__main__":
+
+    # Examples of data to use for testing
+
+    example1 = [12, 45, 1, 56, 3, 56, 1, 3, 45, 2]
+
+    print(dedup(example1))
+
+    example2 = [12, 45, 1, 560, 3, 56, 1, 3, 45, 2]
+
+    print(dedup(example2))
