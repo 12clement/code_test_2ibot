@@ -1,4 +1,6 @@
-   """
+def dedup(numbers):
+
+    """
 
     Method for removing duplicates from list of random numbers
 
@@ -64,6 +66,10 @@ if __name__ == "__main__":
 
     print(dedup(example1))
 
-    example2 = [12, 45, 1, 560, 3, 56, 1, 3, 45, 2]
+    example2 = [12, 45, 1, 56, 3, 56, 1, 3, 45, 2]
 
     print(dedup(example2))
+
+    example3 = [12, 45, 1, 'test', 3, 56, 1, 3, 45, 2]
+
+    print(dedup(example3))
