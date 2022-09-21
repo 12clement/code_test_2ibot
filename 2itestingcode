@@ -13,7 +13,7 @@ def dedup(numbers):
 
     if len(numbers) > 10 or len(numbers) < 10:
 
-        logging.info('List can only exactly 10 numbers.')
+        logging.error('List can only exactly 10 numbers.')
 
         exit(-1)
 
